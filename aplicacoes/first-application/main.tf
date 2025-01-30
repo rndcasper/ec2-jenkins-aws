@@ -10,7 +10,7 @@ terraform {
   required_version = ">= 1.0.0"
 
   backend "s3" {
-    bucket = "terraform-brabus"
+    bucket = "terraform-brabus-ronaldo"
     key    = "aws-ec2/terraform-ec2.tfstate"
     region = "us-east-1"
   }
@@ -18,9 +18,7 @@ terraform {
 }
 
 provider "aws" {
-  shared_credentials_file = "~/.aws/credentials" # Caminho do arquivo com as credenciais
-  profile = "default" # O nome do perfil no arquivo de credenciais (opcional)
-  region = var.region
+    region = var.region
 
   default_tags {
     tags = {
