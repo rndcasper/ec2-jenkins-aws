@@ -11,7 +11,7 @@ pipeline {
         stage("Criacao da Infra") {
             steps {
                 script {
-                    dir ('first-application') {
+                    dir ('/home/rndcasper/repositorios/ec2-jenkins-aws/aplicacoes/first-application') {
                     sh terraform init
                     sh terraform apply
 
