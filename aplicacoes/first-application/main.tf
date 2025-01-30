@@ -18,6 +18,8 @@ terraform {
 }
 
 provider "aws" {
+  shared_credentials_file = "~/.aws/credentials" # Caminho do arquivo com as credenciais
+  profile = "default" # O nome do perfil no arquivo de credenciais (opcional)
   region = var.region
 
   default_tags {
