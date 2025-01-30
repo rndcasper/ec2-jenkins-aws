@@ -11,7 +11,7 @@ pipeline {
         stage("Criacao da Infra") {
             steps {
                 script {
-                dir ('/aplicacoes/first-application') {
+                    dir ('aplicacoes/first-application') {
                     sh terraform init
                     sh terraform apply
 
