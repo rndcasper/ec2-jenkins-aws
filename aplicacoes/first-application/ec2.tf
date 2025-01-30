@@ -11,8 +11,8 @@ resource "aws_instance" "ec2_brabus_p1" {
   associate_public_ip_address = true
   user_data                   = file("./user-data.sh")
 
-  subnet_id              = data.terraform_remote_state.vpc.outputs.subnet_pub1_id
-  vpc_security_group_ids = [data.terraform_remote_state.sg.outputs.sg_pub_id]
+  #subnet_id              = data.terraform_remote_state.vpc.outputs.subnet_pub1_id
+  #vpc_security_group_ids = [data.terraform_remote_state.sg.outputs.sg_pub_id]
 
   tags = {
     Name = "ec2-brabus-p1"
@@ -20,7 +20,7 @@ resource "aws_instance" "ec2_brabus_p1" {
 
 }
 
-resource "aws_instance" "ec2_brabus_p2" {
+/*resource "aws_instance" "ec2_brabus_p2" {
   #count         = "${var.instance_count}"
   ami                         = var.ami
   instance_type               = var.instance_type
@@ -69,4 +69,4 @@ resource "aws_instance" "ec2_brabus_pv2" {
     Name = "ec2-brabus-pv2"
   }
 
-}
+}*/
