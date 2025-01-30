@@ -8,5 +8,11 @@ pipeline {
                 sh 'ls'
             }
         }
+        stage("Criacao da Infra") {
+            script {
+                sh terraform init
+                sh terraform apply
+            }
+        }
     }
 }
