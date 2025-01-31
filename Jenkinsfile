@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
                     dir ('/aplicacoes/first-application') {
-                    withEnv(["PATH+TERRAFORM=${Terraform1 '/usr/bin/terraform'}"]) {    
+                    withEnv(["PATH+TERRAFORM=${tool'/usr/bin/terraform'}"]) {    
                     sh 'terraform init'
                     sh 'terraform plan'
                         }
@@ -27,3 +27,4 @@ pipeline {
             }
         }
     }
+}
