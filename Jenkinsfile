@@ -14,9 +14,10 @@ pipeline {
         stage("Criacao da Infra") {
             steps {
                 script {
-                    
-                    sh terraform init
-                    sh terraform plan
+                    dir ('/aplicacoes/first-application') {
+                    sh 'terraform init'
+                    sh 'terraform plan'
+                        }
 
                      }
 
