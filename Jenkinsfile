@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        terraform 'Terraform1'
+    }
 
     stages {
         stage("Baixar do Git") {
