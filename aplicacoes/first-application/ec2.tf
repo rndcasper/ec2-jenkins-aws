@@ -12,7 +12,7 @@ resource "aws_instance" "ec2_brabus_p1" {
   user_data                   = file("./user-data.sh")
 
   #subnet_id              = data.terraform_remote_state.vpc.outputs.subnet_pub1_id
-  #vpc_security_group_ids = [data.terraform_remote_state.sg.outputs.sg_pub_id]
+  vpc_security_group_ids = [aws_security_group.sg_ec2_pub1.id]
 
   tags = {
     Name = "ec2-brabus-p1"
