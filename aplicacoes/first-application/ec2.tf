@@ -25,8 +25,16 @@ resource "aws_security_group" "sg_ec2_pub1" {
   description = "Utilizar para as EC2 publicas"
   #vpc_id      = data.terraform_remote_state.vpc.outputs.vpc_id
 
-  ingress {
+ ingress {
     description = "Liberar porta 80 para o mundo"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Liberar porta 8080 para o mundo"
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
