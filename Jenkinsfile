@@ -1,7 +1,5 @@
 pipeline {
     agent any
-    tools {
-        terraform 'Terraform1'
     }
 
     stages {
@@ -15,7 +13,6 @@ pipeline {
             steps {
                 script {
                     dir ('/aplicacoes/first-application') {
-                    withEnv(["PATH+TERRAFORM=${tool'Terraform1'}"]) {    
                     sh 'terraform init'
                     sh 'terraform plan'
                         }
