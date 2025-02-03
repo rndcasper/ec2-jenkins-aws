@@ -9,5 +9,15 @@ pipeline {
                 sh 'echo Baixar Git OK'
             }
         }
+
+        stage ("Execucao do projeto Terraform") {
+            script {
+                dir (./aplicacoes/first-application) {
+            sh 'terraform init'
+            sh 'terraform plan'
+                }
+            }
+        
+        }
     }
 }
