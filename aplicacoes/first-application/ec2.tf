@@ -4,7 +4,6 @@ resource "aws_key_pair" "brabus" {
 }
 
 resource "aws_instance" "ec2_brabus_p1" {
-  #count         = "${var.instance_count}"
   ami                         = var.ami
   instance_type               = var.instance_type
   key_name                    = aws_key_pair.brabus.key_name
@@ -16,6 +15,8 @@ resource "aws_instance" "ec2_brabus_p1" {
 
   tags = {
     Name = "ec2-brabus-p1"
+  }
+}
 
 resource "aws_instance" "ec2_brabus_p2" {
   ami                         = var.ami
@@ -30,7 +31,6 @@ resource "aws_instance" "ec2_brabus_p2" {
   tags = {
     Name = "ec2-brabus-p2"
   }
-
 }
 
 resource "aws_security_group" "sg_ec2_pub1" {
