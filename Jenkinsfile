@@ -11,10 +11,12 @@ pipeline {
         }
 
         stage ("Execucao do projeto Terraform") {
-            script {
-                dir (./aplicacoes/first-application) {
-            sh 'terraform init'
-            sh 'terraform plan'
+            steps{
+                script {
+                    dir (./aplicacoes/first-application) {
+                        sh 'terraform init'
+                        sh 'terraform plan'
+                    }
                 }
             }
         
