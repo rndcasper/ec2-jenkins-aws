@@ -3,7 +3,7 @@ resource "aws_key_pair" "brabus" {
   public_key = file("./brabus-key.pub")
 }
 
-resource "aws_instance" "ec2_brabus_p1" {
+resource "aws_instance" "ec2_brabus_p2" {
   #count         = "${var.instance_count}"
   ami                         = var.ami
   instance_type               = var.instance_type
@@ -15,7 +15,7 @@ resource "aws_instance" "ec2_brabus_p1" {
   vpc_security_group_ids = [aws_security_group.sg_ec2_pub1.id]
 
   tags = {
-    Name = "ec2-brabus-p1"
+    Name = "ec2-brabus-p2"
   }
 
 }
