@@ -1,3 +1,5 @@
 .terraform/*
+brabus-key
+brabus-key.pub
 *_[0-9]* # Geralmente usado para arquivos randes
 # Outros arquivos que você não quer rastrear
