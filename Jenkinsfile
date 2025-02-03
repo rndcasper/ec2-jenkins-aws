@@ -21,7 +21,7 @@ pipeline {
                 script {
                     dir ("./aplicacoes/first-application") {
                         sh 'terraform init'
-                        sh 'terraform apply'
+                        sh 'terraform apply --auto-approve'
                     }
                 }
             }
