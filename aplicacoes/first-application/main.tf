@@ -27,23 +27,3 @@ provider "aws" {
     }
   }
 }
-
-#data "terraform_remote_state" "vpc" {
- # backend = "s3"
-
-  #config = {
-   # bucket = "terraform-brabus"
-    #key    = "aws-vpc/terraform-vpc.tfstate"
-    #region = "us-east-1"
-#  }
-#}
-
-#data "terraform_remote_state" "sg" {
- # backend = "s3"
-
-  #config = {
-   # bucket = "terraform-brabus"
-    #key    = "aws-sg/terraform-sg.tfstate"
-    #region = "us-east-1"
-  #}
-#}
