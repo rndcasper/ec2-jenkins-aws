@@ -3,10 +3,10 @@ pipeline {
 
     stages {
         
-        stage("Baixar do Git") {
+        stage("Conectando ao Respositorio do GIT") {
             steps {
                 git url: 'https://github.com/rndcasper/ec2-jenkins-aws.git', branch: 'main'
-                sh 'echo Baixar Git OK'
+                sh 'echo Conectado ao repositorio do GIT'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
                 script {
                     dir ("./aplicacoes/first-application") {
                         sh 'terraform init'
-                        sh 'terraform apply -auto-approve'
+                        sh 'terraform plan'
                     }
                 }
             }
